@@ -313,8 +313,7 @@ body {
     box-shadow 300ms ease;
 }
 
-.project-card:hover,
-.contact-card:hover {
+.project-card:hover {
   transform: translateY(-4px);
   border-color: rgba(94, 234, 212, 0.55);
   box-shadow: 0 22px 45px -30px rgba(20, 184, 166, 0.8);
@@ -322,11 +321,6 @@ body {
 
 .contact-card img {
   filter: brightness(0) invert(1);
-}
-
-.contact-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 26px -16px rgba(20, 184, 166, 0.65);
 }
 
 .social-divider {
