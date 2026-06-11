@@ -25,10 +25,12 @@ const skills = [
   { name: 'HTML', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
   { name: 'CSS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
   { name: 'JavaScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
+  { name: 'React', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
   { name: 'Bootstrap', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg' },
   { name: 'Tailwind CSS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
   { name: 'PHP', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg' },
   { name: 'Laravel', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg' },
+  { name: 'MongoDB', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
   { name: 'MySQL', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
   { name: 'Git', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
 ]
@@ -66,6 +68,8 @@ function App() {
       hue: 170 + Math.random() * 35,
     }))
   )
+  const [scrollY, setScrollY] = useState(0)
+  const bubbleLayerRef = useRef(null)
 
   const playPopSound = () => {
     const AudioCtx = window.AudioContext || window.webkitAudioContext
@@ -145,9 +149,24 @@ function App() {
     return () => observer.disconnect()
   }, [])
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  useEffect(() => {
+    if (bubbleLayerRef.current) {
+      bubbleLayerRef.current.style.transform = `translateY(-${scrollY * 0.4}px)`
+    }
+  }, [scrollY])
+
   return (
     <div className="page min-h-screen text-slate-100 selection:bg-teal-500/30">
-      <div className="bubble-layer" aria-hidden="true">
+      <div className="bubble-layer" ref={bubbleLayerRef} aria-hidden="true">
         {bubbles.map((bubble) => (
           <button
             key={bubble.id}
@@ -178,6 +197,39 @@ function App() {
             A web developer based in the Philippines, creating clean and reliable web solutions. Let&apos;s work together and bring your ideas to life.
           </p>
 
+        </section>
+
+        <section id="about" className="mx-auto max-w-6xl px-5 py-14 text-center md:px-8 md:py-16 lg:px-10" data-reveal>
+          <h2
+            className="section-title text-3xl font-semibold tracking-tight md:text-4xl"
+            data-reveal-item
+            onMouseMove={handleTitleMove}
+            onMouseLeave={resetTitleGlow}
+          >
+            About Me
+          </h2>
+          <div className="mx-auto mt-8 max-w-3xl space-y-6">
+            <p className="text-lg leading-relaxed text-slate-300" data-reveal-item>
+              I'm a passionate full-stack web developer with a strong foundation in creating robust and user-friendly web applications. With expertise in modern frameworks and databases, I specialize in building systems that solve real-world problems.
+            </p>
+            <p className="text-lg leading-relaxed text-slate-300" data-reveal-item>
+              My journey in web development has equipped me with the skills to handle both frontend and backend challenges. I'm dedicated to writing clean, maintainable code and continuously learning new technologies to stay ahead in this ever-evolving field.
+            </p>
+            <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3" data-reveal-item>
+              <div className="rounded-lg border border-teal-300/20 bg-teal-400/5 p-4">
+                <p className="text-2xl font-bold text-teal-300">3+</p>
+                <p className="mt-1 text-sm text-slate-300">Projects Completed</p>
+              </div>
+              <div className="rounded-lg border border-teal-300/20 bg-teal-400/5 p-4">
+                <p className="text-2xl font-bold text-teal-300">Full-Stack</p>
+                <p className="mt-1 text-sm text-slate-300">Development Focus</p>
+              </div>
+              <div className="rounded-lg border border-teal-300/20 bg-teal-400/5 p-4">
+                <p className="text-2xl font-bold text-teal-300">Always</p>
+                <p className="mt-1 text-sm text-slate-300">Learning & Growing</p>
+              </div>
+            </div>
+          </div>
         </section>
 
         <section id="projects" className="mx-auto max-w-6xl px-5 py-14 text-center md:px-8 md:py-16 lg:px-10" data-reveal>
