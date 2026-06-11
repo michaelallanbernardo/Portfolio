@@ -215,7 +215,7 @@ function App() {
             <p className="text-lg leading-relaxed text-slate-300" data-reveal-item>
               My journey in web development has equipped me with the skills to handle both frontend and backend challenges. I'm dedicated to writing clean, maintainable code and continuously learning new technologies to stay ahead in this ever-evolving field.
             </p>
-            <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3" data-reveal-item>
+            <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2" data-reveal-item>
               <div className="rounded-lg border border-teal-300/20 bg-teal-400/5 p-4">
                 <p className="text-2xl font-bold text-teal-300">3+</p>
                 <p className="mt-1 text-sm text-slate-300">Projects Completed</p>
@@ -223,10 +223,6 @@ function App() {
               <div className="rounded-lg border border-teal-300/20 bg-teal-400/5 p-4">
                 <p className="text-2xl font-bold text-teal-300">Full-Stack</p>
                 <p className="mt-1 text-sm text-slate-300">Development Focus</p>
-              </div>
-              <div className="rounded-lg border border-teal-300/20 bg-teal-400/5 p-4">
-                <p className="text-2xl font-bold text-teal-300">Always</p>
-                <p className="mt-1 text-sm text-slate-300">Learning & Growing</p>
               </div>
             </div>
           </div>
