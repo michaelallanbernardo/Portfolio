@@ -199,35 +199,6 @@ function App() {
 
         </section>
 
-        <section id="about" className="mx-auto max-w-6xl px-5 py-14 text-center md:px-8 md:py-16 lg:px-10" data-reveal>
-          <h2
-            className="section-title text-3xl font-semibold tracking-tight md:text-4xl"
-            data-reveal-item
-            onMouseMove={handleTitleMove}
-            onMouseLeave={resetTitleGlow}
-          >
-            About Me
-          </h2>
-          <div className="mx-auto mt-8 max-w-3xl space-y-6">
-            <p className="text-lg leading-relaxed text-slate-300" data-reveal-item>
-              I'm a passionate full-stack web developer with a strong foundation in creating robust and user-friendly web applications. With expertise in modern frameworks and databases, I specialize in building systems that solve real-world problems.
-            </p>
-            <p className="text-lg leading-relaxed text-slate-300" data-reveal-item>
-              My journey in web development has equipped me with the skills to handle both frontend and backend challenges. I'm dedicated to writing clean, maintainable code and continuously learning new technologies to stay ahead in this ever-evolving field.
-            </p>
-            <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2" data-reveal-item>
-              <div className="rounded-lg border border-teal-300/20 bg-teal-400/5 p-4">
-                <p className="text-2xl font-bold text-teal-300">3+</p>
-                <p className="mt-1 text-sm text-slate-300">Projects Completed</p>
-              </div>
-              <div className="rounded-lg border border-teal-300/20 bg-teal-400/5 p-4">
-                <p className="text-2xl font-bold text-teal-300">Full-Stack</p>
-                <p className="mt-1 text-sm text-slate-300">Development Focus</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
         <section id="projects" className="mx-auto max-w-6xl px-5 py-14 text-center md:px-8 md:py-16 lg:px-10" data-reveal>
           <h2
             className="section-title text-3xl font-semibold tracking-tight md:text-4xl"
